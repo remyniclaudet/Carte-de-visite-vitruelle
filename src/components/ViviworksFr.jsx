@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import qrCode from "../assets/qr.png";
+import qrCode from "../assets/qrFr.png";
 import logo from "../assets/logo.png";
 
 const ViviworksFr = () => {
