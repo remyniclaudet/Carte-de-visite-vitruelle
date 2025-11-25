@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import qrCode from "../assets/qrFr.png";
-import logo from "../assets/logo.png";
+import logo from "../assets/Logo.png";
 
 const ViviworksFr = () => {
   const [isFlipped, setIsFlipped] = useState(false);
