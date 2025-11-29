@@ -9,6 +9,26 @@ const ViviworksAi = () => {
     setIsFlipped(!isFlipped);
   };
 
+  // Fonctions de redirection
+  const handleEmailClick = () => {
+    window.location.href = "mailto:aiman.bellara@viviworks.ai";
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = "tel:+33784789910";
+  };
+
+  const handleWebsiteClick = () => {
+    window.open("https://www.viviworks.ai", "_blank");
+  };
+
+  const handleAddressClick = () => {
+    // Ouvrir Google Maps avec l'adresse
+    const address = "24-26 Arcadia Avenue, London N3 2JU, UK";
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    window.open(mapsUrl, "_blank");
+  };
+
   return (
     <div className="flex items-center justify-center bg-black p-4 animate-fadeIn">
       <div 
@@ -42,25 +62,55 @@ const ViviworksAi = () => {
 
                 <div className="animate-slideInLeft" style={{ animationDelay: '0.1s' }}>
                   <p className="text-gray-400 text-xs md:text-sm lg:text-base font-light mb-1 md:mb-2">Email</p>
-                  <p className="text-white text-sm md:text-base lg:text-lg break-words">aiman.bellara@viviworks.ai</p>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleEmailClick();
+                    }}
+                    className="text-white text-sm md:text-base lg:text-lg break-words hover:text-blue-400 transition-colors duration-200 text-left"
+                  >
+                    aiman.bellara@viviworks.ai
+                  </button>
                 </div>
 
                 <div className="animate-slideInLeft" style={{ animationDelay: '0.2s' }}>
                   <p className="text-gray-400 text-xs md:text-sm lg:text-base font-light mb-1 md:mb-2">Téléphone</p>
-                  <p className="text-white text-sm md:text-base lg:text-lg">0033784789910</p>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePhoneClick();
+                    }}
+                    className="text-white text-sm md:text-base lg:text-lg hover:text-green-400 transition-colors duration-200 text-left"
+                  >
+                    +33 7 84 78 99 10
+                  </button>
                 </div>
 
                 <div className="animate-slideInLeft" style={{ animationDelay: '0.3s' }}>
                   <p className="text-gray-400 text-xs md:text-sm lg:text-base font-light mb-1 md:mb-2">Site web</p>
-                  <p className="text-white text-sm md:text-base lg:text-lg">www.viviworks.ai</p>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleWebsiteClick();
+                    }}
+                    className="text-white text-sm md:text-base lg:text-lg hover:text-purple-400 transition-colors duration-200 text-left"
+                  >
+                    www.viviworks.ai
+                  </button>
                 </div>
 
                 <div className="animate-slideInLeft" style={{ animationDelay: '0.4s' }}>
                   <p className="text-gray-400 text-xs md:text-sm lg:text-base font-light mb-1 md:mb-2">Adresse</p>
-                  <p className="text-white text-sm md:text-base lg:text-lg leading-relaxed">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleAddressClick();
+                    }}
+                    className="text-white text-sm md:text-base lg:text-lg leading-relaxed hover:text-orange-400 transition-colors duration-200 text-left"
+                  >
                     24–26 Arcadia Avenue, Fin0000<br />
                     Londres, Royaume-Uni, N3 2JU
-                  </p>
+                  </button>
                 </div>
               </div>
             </div>
@@ -71,7 +121,11 @@ const ViviworksAi = () => {
                   src={qrCode}
                   alt="QR Code"
                   className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 
-                           rounded-xl shadow-lg bg-white p-2 transition-all duration-300 hover:scale-105"
+                           rounded-xl shadow-lg bg-white p-2 transition-all duration-300 hover:scale-105 cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleWebsiteClick();
+                  }}
                 />
               </div>
             </div>
